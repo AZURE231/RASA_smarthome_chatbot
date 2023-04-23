@@ -1,0 +1,136 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you?
+
+- intent: open_lamp
+  examples: |
+    - turn on the lamp
+    - can you switch on the light?
+    - please open the lamp
+    - turn the lamp on
+    - turn on lamp
+
+- intent: close_lamp
+  examples: |
+    - turn off the light
+    - can you switch off the lamp?
+    - please close the light
+    - turn the lamp off
+    - turn off lamp
+
+- intent: show_temperature
+  examples: |
+    - what is the temperature in the room?
+    - can you tell me how hot it is?
+    - show me the temperature
+    - what's the current temperature
+
+- intent: show_humidity
+  examples: |
+    - what is the humidity level?
+    - can you show me the humidity?
+    - what's the current humidity?
+    - how humid is it?
+
+- intent: turn_on_pump
+  examples: |
+    - start the pump
+    - turn on the water pump
+    - can you activate the pump?
+    - please turn on the pump
+
+- intent: turn_off_pump
+  examples: |
+    - stop the pump
+    - turn off the water pump
+    - can you deactivate the pump?
+    - please turn off the pump

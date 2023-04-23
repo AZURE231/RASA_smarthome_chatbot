@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Tell the temperature anytime the user ask about temperature
+  steps:
+  - intent: show_temperature
+  - action: action_tell_temp
+
+- rule: Tell the humid anytime the user ask about humid
+  steps:
+  - intent: show_humidity
+  - action: action_tell_humid
+
+- rule: Turn the light on when user say so
+  steps:
+  - intent: open_lamp
+  - action: action_light_on
+
+- rule: Turn the light off when user say so
+  steps:
+  - intent: close_lamp
+  - action: action_light_off

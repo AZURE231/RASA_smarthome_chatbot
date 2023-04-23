@@ -1,0 +1,83 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - open_lamp
+  - close_lamp
+  - show_temperature
+  - show_humidity
+  - turn_on_pump
+  - turn_off_pump
+entities:
+  - lamp
+  - pump
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_temp:
+  - text: "The current temperature is 25 degrees Celsius."
+
+  utter_humidity:
+  - text: "The current humidity level is 50%."
+
+  utter_light_on:
+  - text: "Turning the light on!"
+
+  utter_light_off:
+  - text: "Turning the light off!"
+
+  utter_pump_on:
+  - text: "Starting the pump!"
+
+  utter_pump_off:
+  - text: "Stopping the pump!"
+
+slots:
+  lamp_state:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: lamp
+
+  pump_state:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: pump
+
+actions:
+  - action_tell_temp
+  - action_tell_humid
+  - action_light_on
+  - action_light_off
+  
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
