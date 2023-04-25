@@ -3,10 +3,6 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
   - bot_challenge
   - open_lamp
   - close_lamp
@@ -14,68 +10,49 @@ intents:
   - show_humidity
   - turn_on_pump
   - turn_off_pump
-entities:
-  - lamp
-  - pump
+  - ask_functionality
+  - ask_joke_knock
+  - ask_joke
+  - ask_joke_name
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! How can I help you today?"
+  - text: "Nice to see you again, master!"
+  - text: "Welcome! What can I assist you with today?"
+  - text: "Good day! How can I be of service?"
+  - text: "Hello! What can I do for you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_inform_can_do:
+  - text: "I am capable of providing you with information about the temperature and humidity in this room at the moment. Additionally, I can turn the light and pump on or off as per your request. Also, I can tell you a Knock-Knock joke if you'd like."
 
-  utter_did_that_help:
-  - text: "Did that help you?"
+  utter_joke_knock:
+  - text: "Knock-knock!"
 
-  utter_happy:
-  - text: "Great, carry on!"
+  utter_inform_name_joke:
+  - text: "Wendys."
+
+  utter_joke:
+  - text: "When deez nuts hit you in the face. Haha! Got you!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "See you again, master!"
+  - text: "Goodbye!"
+  - text: "Farewell for now. Feel free to come back anytime!"
+  - text: "Bye bye! Take care and have a great day."
+  - text: "Goodbye! Thanks for chatting with me, master!"
+  - text: "Alright then, I'll see you later. Have a good day!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
-  utter_temp:
-  - text: "The current temperature is 25 degrees Celsius."
-
-  utter_humidity:
-  - text: "The current humidity level is 50%."
-
-  utter_light_on:
-  - text: "Turning the light on!"
-
-  utter_light_off:
-  - text: "Turning the light off!"
-
-  utter_pump_on:
-  - text: "Starting the pump!"
-
-  utter_pump_off:
-  - text: "Stopping the pump!"
-
-slots:
-  lamp_state:
-    type: bool
-    influence_conversation: true
-    mappings:
-      - type: from_entity
-        entity: lamp
-
-  pump_state:
-    type: bool
-    influence_conversation: true
-    mappings:
-    - type: from_entity
-      entity: pump
+  - text: "I am Roboco, a smart-house manager bot powered by Azure-sama."
 
 actions:
   - action_tell_temp
   - action_tell_humid
   - action_light_on
   - action_light_off
+  - action_pump_on
+  - action_pump_off
   
 
 session_config:

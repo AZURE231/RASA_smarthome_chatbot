@@ -31,3 +31,18 @@ rules:
   steps:
   - intent: close_lamp
   - action: action_light_off
+
+- rule: Turn the pump on when user say so
+  steps:
+  - intent: turn_on_pump
+  - action: action_pump_on
+
+- rule: Turn the pum off when user say so
+  steps:
+  - intent: turn_off_pump
+  - action: action_pump_off
+
+- rule: Tell what Roboco capable of
+  steps:
+  - intent: ask_functionality
+  - action: utter_inform_can_do

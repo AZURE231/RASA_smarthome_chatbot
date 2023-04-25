@@ -30,59 +30,6 @@ nlu:
     - bye bye
     - see you later
 
-- intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
-- intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
-- intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -90,6 +37,8 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - who are you?
+    - who is your creator
+    - who is your boss
 
 - intent: open_lamp
   examples: |
@@ -134,3 +83,43 @@ nlu:
     - turn off the water pump
     - can you deactivate the pump?
     - please turn off the pump
+
+- intent: ask_joke_knock
+  examples: |
+    - Who's there?
+    - Who is it?
+    - Sure, tell me the joke!
+    - Okay, I'm ready for the joke!
+    - Who's knocking?
+    - Go ahead, I'm listening!
+
+- intent: ask_joke
+  examples: |
+    - tell me a joke
+    - I want to hear a joke
+    - can you make me laugh?
+    - do you know any good jokes?
+    - I need a good laugh
+    - I'm feeling down, tell me a joke
+    - joke please
+
+- intent: ask_joke_name
+  examples: |
+    - Wendys who?
+    - who?
+    - Wendys what?
+    - Wendys?
+    - Who is Wendys?
+    - What?
+    - I don't know
+    - go on...
+
+- intent: ask_functionality
+  examples: |
+    - What can you do?
+    - What are your capabilities?
+    - Can you help me with something?
+    - How can you assist me?
+    - What services do you provide?
+    - Are there any tasks you can perform?
+    - What kind of things are you able to do?

@@ -1,71 +1,18 @@
 version: "3.1"
 
 stories:
-
-- story: happy path
+- story: tell a joke
   steps:
-  - intent: greet
+  - intent: greet 
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
+  - intent: ask_functionality
+  - action: utter_inform_can_do
+  - intent: ask_joke
+  - action: utter_joke_knock
+  - intent: ask_joke_knock
+  - action: utter_inform_name_joke
+  - intent: ask_joke_name
+  - action: utter_joke
 
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
-
-# - story: turn lamp on
-#   steps:
-#   - intent: open_lamp
-#   - action: utter_light_on
-#   - slot_was_set:
-#     - lamp_state: true
-
-# - story: turn lamp off
-#   steps:
-#   - intent: close_lamp
-#   - action: utter_light_off
-#   - slot_was_set:
-#     - lamp_state: false
-#   - action: utter_light_off
-
-# - story: show temperature
-#   steps:
-#   - intent: show_temperature
-#   - action: utter_temp
-
-# - story: show humidity
-#   steps:
-#   - intent: show_humidity
-#   - action: utter_humidity
-
-- story: turn on pump
-  steps:
-  - intent: turn_on_pump
-  - slot_was_set:
-    - pump_state: true
-  - action: utter_pump_on
-
-- story: turn off pump
-  steps:
-  - intent: turn_off_pump
-  - slot_was_set:
-    - pump_state: false
-  - action: utter_pump_off
 
 
