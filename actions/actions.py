@@ -15,8 +15,8 @@ import requests
 
 from Adafruit_IO import RequestError, Client, Feed
 
-ADAFRUIT_IO_USERNAME = 'clowz'
-ADAFRUIT_IO_KEY = 'aio_siyb61AkDkIo2np4UpRjq75PpRyy'
+ADAFRUIT_IO_USERNAME = 'hungneet'
+ADAFRUIT_IO_KEY = 'aio_sAtR88FwrOFXxff2weSfgFK9Gudc'
 
 aio = Client(ADAFRUIT_IO_USERNAME, ADAFRUIT_IO_KEY)
 
@@ -31,7 +31,7 @@ class ActionTellTemp(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        temperature_data = aio.receive('cambien1').value
+        temperature_data = aio.receive('sensor2').value
         
         msg = f"The temperature is {temperature_data}°C now."
         dispatcher.utter_message(text=msg)
@@ -47,7 +47,7 @@ class ActionTellHumid(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        humid_data = aio.receive('cambien2').value
+        humid_data = aio.receive('sensor1').value
         
         msg = f"The humid is {humid_data}% now."
         dispatcher.utter_message(text=msg)
@@ -63,7 +63,7 @@ class ActionLightOn(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        light_state = aio.receive('nutnhan1').value
+        light_state = aio.receive('button3').value
         print(light_state)
         
         if light_state == '1':
@@ -72,7 +72,7 @@ class ActionLightOn(Action):
         else:
             msg = f"Turning on the light!"
             dispatcher.utter_message(text=msg)
-            button1_feed = aio.feeds('nutnhan1')
+            button1_feed = aio.feeds('button3')
             aio.send_data(button1_feed.key, 1)
     
         return []
@@ -86,7 +86,7 @@ class ActionLightOff(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        light_state = aio.receive('nutnhan1').value
+        light_state = aio.receive('button3').value
         
         if light_state == '0':
             msg = f"The light is already turn off!"
@@ -94,7 +94,7 @@ class ActionLightOff(Action):
         else:
             msg = f"Turning off the light!"
             dispatcher.utter_message(text=msg)
-            button1_feed = aio.feeds('nutnhan1')
+            button1_feed = aio.feeds('button3')
             aio.send_data(button1_feed.key, 0)
     
         return []
@@ -108,7 +108,7 @@ class ActionPumpOn(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        pump_state = aio.receive('nutnhan2').value
+        pump_state = aio.receive('button1').value
         
         if pump_state == '1':
             msg = f"The pump is already turn on!"
@@ -116,7 +116,7 @@ class ActionPumpOn(Action):
         else:
             msg = f"Starting the pump!"
             dispatcher.utter_message(text=msg)
-            button2_feed = aio.feeds('nutnhan2')
+            button2_feed = aio.feeds('button1')
             aio.send_data(button2_feed.key, 1)
     
         return []
@@ -130,7 +130,7 @@ class ActionPumpOff(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
-        pump_state = aio.receive('nutnhan2').value
+        pump_state = aio.receive('button1').value
         
         if pump_state == '0':
             msg = f"The pump is already turn off!"
@@ -138,7 +138,7 @@ class ActionPumpOff(Action):
         else:
             msg = f"Stopping the pump!"
             dispatcher.utter_message(text=msg)
-            button2_feed = aio.feeds('nutnhan2')
+            button2_feed = aio.feeds('button1')
             aio.send_data(button2_feed.key, 0)
     
         return []
